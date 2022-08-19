@@ -67,41 +67,71 @@ Write a function leftrotate(m) that takes a list representation m of a square ma
 Your function should not modify the argument m provided to the function rotate().
 
 def leftrotate(m):
-    ans=list()
-    for a in range(len(m)):
-        ans.append([])
-        for b in range(len(m)):
-            ans[a].append(m[b][len(m)-a-1])
-    return(ans)  
+   
+   ans=list()
+   
+   for a in range(len(m)):
+   
+   ans.append([])
+   
+   for b in range(len(m)):
+   
+   ans[a].append(m[b][len(m)-a-1])
+   
+   return(ans)  
 
 import ast
 
 def parse(inp):
+  
   inp = ast.literal_eval(inp)
+  
   return (inp)
 
 fncall = input()
+
 lparen = fncall.find("(")
+
 rparen = fncall.rfind(")")
+
 fname = fncall[:lparen]
+
 farg = fncall[lparen+1:rparen]
 
 if fname == "contracting":
-  arg = parse(farg)
-  print(contracting(arg))
+
+arg = parse(farg)
+
+print(contracting(arg))
 
 if fname == "counthv":
-  arg = parse(farg)
-  print(counthv(arg))
+
+arg = parse(farg)
+
+print(counthv(arg))
 
 if fname == "leftrotate":
-  arg = parse(farg)
-  savearg = arg
-  ans = leftrotate(arg)
-  if savearg == arg:
-    print(ans)
-  else:
-    print("Side effect")
+
+arg = parse(farg)
+
+savearg = arg
+
+ans = leftrotate(arg)
+
+if savearg == arg:
+
+print(ans)
+
+else:
+
+print("Side effect")
+
+print(leftrotate([[1,2],[3,4]]))
+
+print(leftrotate([[1,2,3],[4,5,6],[7,8,9]]))
+
+print(leftrotate([[1,1,1],[2,2,2],[3,3,3]]))
+
 
 
 
